@@ -36,6 +36,55 @@ public struct ImageFrame {
     }
 }
 
+open class AnimatedImageView: UIView {
+    var image: AnimatedImage
+    private var link: CADisplayLink!
+    private var refIndex = 0
+    private var refTime: CFTimeInterval = 0.0
+
+    public init(image: AnimatedImage, frame: CGRect) {
+        self.image = image
+        super.init(frame: frame)
+        if image.frames?.count ?? 0 > 0 {
+            refTime = CACurrentMediaTime()
+            link = CADisplayLink(target: self, selector: #selector(AnimatedImageView.refresh(_:)))
+            link.add(to: RunLoop.main, forMode: .defaultRunLoopMode)
+        }
+    }
+    
+    required public init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    open override func draw(_ layer: CALayer, in ctx: CGContext) {
+        super.draw(layer, in: ctx)
+        let frame = image.frames![refIndex]
+        if frame.dispose {
+            ctx.clear(bounds)
+        }
+        UIGraphicsPushContext(ctx)
+        let rect = CGRect(x: (bounds.width - frame.image.size.width)/2, y: (bounds.height - frame.image.size.height)/2, width: frame.image.size.width, height: frame.image.size.height)
+        frame.image.draw(in: rect)
+        UIGraphicsPopContext()
+    }
+    deinit {
+        link.remove(from: RunLoop.main, forMode: .defaultRunLoopMode)
+    }
+    
+    func refresh(_ link: CADisplayLink) {
+        if (CACurrentMediaTime() - refTime) > Double(image.frames![refIndex].displayDuration)/1000
+            || refIndex == 0 {
+            layer.setNeedsDisplay()
+            refIndex += 1
+            refTime = CACurrentMediaTime()
+            if refIndex > image.frames!.count - 1 {
+                refIndex = 0
+            }
+        }
+    }
+
+}
+
 open class AnimatedImage {
     var size: CGSize = .zero
     public var frames: [ImageFrame]?
@@ -47,3 +96,4 @@ open class AnimatedImage {
         size = frame.size
     }
 }
+

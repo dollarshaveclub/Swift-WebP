@@ -14,14 +14,10 @@
 		9D377DF91EFC9B4A00ADBE4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D377DF71EFC9B4A00ADBE4B /* LaunchScreen.storyboard */; };
 		9D377E041EFC9B4A00ADBE4B /* Example_Swift_WebPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D377E031EFC9B4A00ADBE4B /* Example_Swift_WebPTests.swift */; };
 		9D3D5AD21EFE30C30009837C /* SwiftWebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3D5ACD1EFE30B00009837C /* SwiftWebP.framework */; };
-		9D7F336A1F018B4F0016BE10 /* wsp@2x.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F33681F018B450016BE10 /* wsp@2x.webp */; };
-		9D7F336B1F018B4F0016BE10 /* wsp@3x.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F33691F018B450016BE10 /* wsp@3x.webp */; };
-		9D7F336C1F018B4F0016BE10 /* gift-box-animated-reverse.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F33671F00E78B0016BE10 /* gift-box-animated-reverse.webp */; };
-		9D7F336D1F018B4F0016BE10 /* gift-box-animated-reverse@2x.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F33661F00E78B0016BE10 /* gift-box-animated-reverse@2x.webp */; };
-		9D7F336E1F018B4F0016BE10 /* gift-box-animated-reverse@3x.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F33621F00E78B0016BE10 /* gift-box-animated-reverse@3x.webp */; };
-		9D7F336F1F018B4F0016BE10 /* gift-box-animated.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F33651F00E78B0016BE10 /* gift-box-animated.webp */; };
-		9D7F33701F018B4F0016BE10 /* gift-box-animated@2x.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F33631F00E78B0016BE10 /* gift-box-animated@2x.webp */; };
-		9D7F33711F018B4F0016BE10 /* gift-box-animated@3x.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D7F33641F00E78B0016BE10 /* gift-box-animated@3x.webp */; };
+		9DF0ECC61F038B5100B53BE8 /* 2_webp_a.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0ECC31F038B1600B53BE8 /* 2_webp_a.webp */; };
+		9DF0ECC71F038B5100B53BE8 /* 2_webp_ll.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0ECC41F038B1600B53BE8 /* 2_webp_ll.webp */; };
+		9DF0ECC91F03990200B53BE8 /* cell_animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0ECC81F03981A00B53BE8 /* cell_animation.webp */; };
+		9DF0ECCB1F039F2100B53BE8 /* gift-box-animated.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0ECCA1F039F1700B53BE8 /* gift-box-animated.webp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,14 +63,10 @@
 		9D377E031EFC9B4A00ADBE4B /* Example_Swift_WebPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example_Swift_WebPTests.swift; sourceTree = "<group>"; };
 		9D377E051EFC9B4A00ADBE4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D3D5AC71EFE30B00009837C /* SwiftWebP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftWebP.xcodeproj; path = ../../SwiftWebP.xcodeproj; sourceTree = "<group>"; };
-		9D7F33621F00E78B0016BE10 /* gift-box-animated-reverse@3x.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gift-box-animated-reverse@3x.webp"; sourceTree = "<group>"; };
-		9D7F33631F00E78B0016BE10 /* gift-box-animated@2x.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gift-box-animated@2x.webp"; sourceTree = "<group>"; };
-		9D7F33641F00E78B0016BE10 /* gift-box-animated@3x.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gift-box-animated@3x.webp"; sourceTree = "<group>"; };
-		9D7F33651F00E78B0016BE10 /* gift-box-animated.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gift-box-animated.webp"; sourceTree = "<group>"; };
-		9D7F33661F00E78B0016BE10 /* gift-box-animated-reverse@2x.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gift-box-animated-reverse@2x.webp"; sourceTree = "<group>"; };
-		9D7F33671F00E78B0016BE10 /* gift-box-animated-reverse.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gift-box-animated-reverse.webp"; sourceTree = "<group>"; };
-		9D7F33681F018B450016BE10 /* wsp@2x.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wsp@2x.webp"; sourceTree = "<group>"; };
-		9D7F33691F018B450016BE10 /* wsp@3x.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "wsp@3x.webp"; sourceTree = "<group>"; };
+		9DF0ECC31F038B1600B53BE8 /* 2_webp_a.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2_webp_a.webp; sourceTree = "<group>"; };
+		9DF0ECC41F038B1600B53BE8 /* 2_webp_ll.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2_webp_ll.webp; sourceTree = "<group>"; };
+		9DF0ECC81F03981A00B53BE8 /* cell_animation.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = cell_animation.webp; sourceTree = "<group>"; };
+		9DF0ECCA1F039F1700B53BE8 /* gift-box-animated.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gift-box-animated.webp"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,14 +110,10 @@
 		9D377DED1EFC9B4A00ADBE4B /* Example-Swift-WebP */ = {
 			isa = PBXGroup;
 			children = (
-				9D7F33681F018B450016BE10 /* wsp@2x.webp */,
-				9D7F33691F018B450016BE10 /* wsp@3x.webp */,
-				9D7F33671F00E78B0016BE10 /* gift-box-animated-reverse.webp */,
-				9D7F33661F00E78B0016BE10 /* gift-box-animated-reverse@2x.webp */,
-				9D7F33621F00E78B0016BE10 /* gift-box-animated-reverse@3x.webp */,
-				9D7F33651F00E78B0016BE10 /* gift-box-animated.webp */,
-				9D7F33631F00E78B0016BE10 /* gift-box-animated@2x.webp */,
-				9D7F33641F00E78B0016BE10 /* gift-box-animated@3x.webp */,
+				9DF0ECCA1F039F1700B53BE8 /* gift-box-animated.webp */,
+				9DF0ECC81F03981A00B53BE8 /* cell_animation.webp */,
+				9DF0ECC31F038B1600B53BE8 /* 2_webp_a.webp */,
+				9DF0ECC41F038B1600B53BE8 /* 2_webp_ll.webp */,
 				9D377DEE1EFC9B4A00ADBE4B /* AppDelegate.swift */,
 				9D377DF01EFC9B4A00ADBE4B /* ViewController.swift */,
 				9D377DF21EFC9B4A00ADBE4B /* Main.storyboard */,
@@ -263,14 +251,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D7F336A1F018B4F0016BE10 /* wsp@2x.webp in Resources */,
-				9D7F336B1F018B4F0016BE10 /* wsp@3x.webp in Resources */,
-				9D7F336C1F018B4F0016BE10 /* gift-box-animated-reverse.webp in Resources */,
-				9D7F336D1F018B4F0016BE10 /* gift-box-animated-reverse@2x.webp in Resources */,
-				9D7F336E1F018B4F0016BE10 /* gift-box-animated-reverse@3x.webp in Resources */,
-				9D7F336F1F018B4F0016BE10 /* gift-box-animated.webp in Resources */,
-				9D7F33701F018B4F0016BE10 /* gift-box-animated@2x.webp in Resources */,
-				9D7F33711F018B4F0016BE10 /* gift-box-animated@3x.webp in Resources */,
+				9DF0ECCB1F039F2100B53BE8 /* gift-box-animated.webp in Resources */,
+				9DF0ECC91F03990200B53BE8 /* cell_animation.webp in Resources */,
+				9DF0ECC61F038B5100B53BE8 /* 2_webp_a.webp in Resources */,
+				9DF0ECC71F038B5100B53BE8 /* 2_webp_ll.webp in Resources */,
 				9D377DF91EFC9B4A00ADBE4B /* LaunchScreen.storyboard in Resources */,
 				9D377DF61EFC9B4A00ADBE4B /* Assets.xcassets in Resources */,
 				9D377DF41EFC9B4A00ADBE4B /* Main.storyboard in Resources */,
