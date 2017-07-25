@@ -19,7 +19,7 @@ public enum ImageDecodeResult {
     case error(ImageDecodeError)
 }
 
-public enum ImageDecodeError {
+public enum ImageDecodeError: Error {
     case unknown
     case malformedData
     case gif
@@ -28,60 +28,23 @@ public enum ImageDecodeError {
 
 typealias ImageDecodeProgress = (_ progress: Float)->()
 
-/*
-
-expectations:
- 
- convenience init(data: Data, completion: @escaping (ImageDecodeResult)->())
-
- - completion logs on the main thread when initialized from non-main thread
- - ImageDecodeResult error for malformed data
-
- decode(data: Data)
- 
- - valid UIImage from WebP
- - valid AnimatedImage from WebP
- - valid GIF from WebP
- - error for no adequate image source ref (how to produce this?)
- 
- updateProgress(progress: Float)
- 
- - call off main thread, expect decodeProgress variable called on main
- - update > 1 value, expect decodeProgress of 1.0
- - update < 0, expect decodeProgress of 0.0
- 
- decodeWebPData(_ data: Data, scale: CGFloat) -> ImageDecodeResult
- 
- */
-
-/*
- review notes:
- 
- decode(data: Data) -> ImageFormat
- 
- switch imageFormat {
-     case .gif
-     case .webP
-     case .image
- }
- 
- */
-
 public class ImageDecoder {
     
     var decodeProgress: ImageDecodeProgress?
-    
-    public init(data: Data, completion: @escaping (ImageDecodeResult)->()) {
-        DispatchQueue.global().async { [weak self] in
-            guard let s = self else {return}
-            let image = s.decode(data: data as Data)
+
+    public init() {}
+
+    static func decode(data: Data, completion: @escaping (ImageDecodeResult)->()) {
+        let decoder = ImageDecoder()
+        DispatchQueue.global().async {
+            let image = decoder.decode(data: data as Data)
             DispatchQueue.main.async {
                 completion(image)
             }
         }
     }
     
-    func decode(data: Data) -> ImageDecodeResult {
+    public func decode(data: Data) -> ImageDecodeResult {
         var imageDecode = ImageDecodeResult.error(.unknown)
         let scale = UIScreen.main.scale
         data.withUnsafeBytes { (bytesPointer: UnsafePointer<UInt8>) -> Void in
@@ -234,7 +197,7 @@ public class ImageDecoder {
         }
         return ImageDecodeResult.animatedImage(animatedImage)
     }
-    
+
     func createImage(bytes: UnsafePointer<UInt8>, size: size_t, config: UnsafeMutablePointer<WebPDecoderConfig>, scale: CGFloat) -> UIImage? {
         if VP8StatusCode(WebPDecode(bytes, size, config).rawValue) != VP8_STATUS_OK {
             return nil
@@ -243,16 +206,20 @@ public class ImageDecoder {
         var width: Int32 = 0
         if let data = WebPDecodeRGBA(bytes, size, &width, &height) {
             var config = config
-            let provider = CGDataProvider(dataInfo: &config, data: UnsafeRawPointer(data), size: Int(width*height*4), releaseData:{ _,_,_ in return })
+            let releaseMaskImagePixelData: CGDataProviderReleaseDataCallback = { (info: UnsafeMutableRawPointer?, data: UnsafeRawPointer, size: Int) -> () in
+                // https://developer.apple.com/reference/coregraphics/cgdataproviderreleasedatacallback
+                // N.B. 'CGDataProviderRelease' is unavailable: Core Foundation objects are automatically memory managed
+                return
+            }
+            let provider = CGDataProvider(dataInfo: &config, data: UnsafeRawPointer(data), size: Int(width*height*4), releaseData:releaseMaskImagePixelData)
             let colorSpace = CGColorSpaceCreateDeviceRGB()
-            
-            let bitmapInfo: CGBitmapInfo = []//CGBitmapInfo(rawValue: 0)] // < -- 0_- latest fix.
-            guard let imageRef = CGImage(width: Int(width), height: Int(height), bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: 4*Int(width), space: colorSpace, bitmapInfo: bitmapInfo, provider: provider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent) else {
+            let bitmapInfo: CGBitmapInfo = [CGBitmapInfo(rawValue: (0 << 12)), CGBitmapInfo(rawValue: CGImageAlphaInfo.last.rawValue)]
+            guard let imageRef = CGImage.init(width: Int(width), height: Int(height), bitsPerComponent: 8, bitsPerPixel: 32, bytesPerRow: 4*Int(width), space: colorSpace, bitmapInfo: bitmapInfo, provider: provider!, decode: nil, shouldInterpolate: true, intent: .defaultIntent) else {
                 return nil
             }
             let image = UIImage(cgImage: imageRef, scale: scale, orientation: .up)
             WebPFreeDecBuffer(&config.pointee.output);
-            return image // success
+            return image
         } else {
             return nil
         }

@@ -10,50 +10,50 @@ import UIKit
 import SwiftWebP
 
 class ViewController: UIViewController {
-    var result: ImageDecoder?
-    var scrollView = UIScrollView()
+    var decoder = ImageDecoder()
+    let scrollView = UIScrollView()
+    var animatedImage: AnimatedImageView?
     override func viewDidLoad() {
         super.viewDidLoad()
-//        presentImage("2_webp_ll", x: 15)
-//        presentImage("2_webp_a", x: 150)
-        presentImage("cell_animation", x: 150, y: 250)
-        presentImage("gift-box-animated", x: 30, y: 400)
-        
-        view.addSubview(scrollView)
         scrollView.frame = view.bounds
-        scrollView.contentSize = CGSize(width: view.bounds.width, height: 5000)
+        view.addSubview(scrollView)
+        view.backgroundColor = UIColor(red: 10/255, green: 10/255, blue: 10/255, alpha: 1.0)
+        scrollView.contentSize = CGSize(width: view.bounds.width, height:
+            presentImage("anitiger", y: presentImage("cosmic_tiger_a", y: presentImage("red_fox", y: 100) + 20) + 10))
     }
-    
-    
-    func presentImage(_ str: String, x: CGFloat, y: CGFloat = 100) {
-        // Do any additional setup after loading the view, typically from a nib.
+
+    func presentImage(_ str: String, y: CGFloat) -> CGFloat {
         do {
             let data = try Data(contentsOf: Bundle.main.url(forResource: str, withExtension: "webp")!)
-            result = ImageDecoder(data: data, completion: { decoded in
-                switch decoded {
-                case .image(let image):
-                    let imageView = UIImageView(image: image)
-                    imageView.frame.origin = CGPoint(x: x, y: y)
-                    self.scrollView.addSubview(imageView)
-                case .animatedImage(let aniImage):
-                    let animatedImageView = AnimatedImageView(image: aniImage, frame: .zero)
-                    animatedImageView.frame = CGRect(x: x, y: y, width: 200, height: 200)
-                    self.scrollView.addSubview(animatedImageView)
-                default :
-                    print("you dun fukkedup")
-                }
-            })
-            
+            var h: CGFloat = y
+            func x(_ w:CGFloat) -> CGFloat {
+                return (view.bounds.width - w)/2
+            }
+            switch decoder.decode(data: data) {
+            case .image(let image):
+                let imageView = UIImageView(image: image)
+                imageView.frame.origin = CGPoint(x: x(imageView.bounds.width), y: y)
+                h += imageView.image?.size.height ?? imageView.bounds.height
+                scrollView.addSubview(imageView)
+            case .animatedImage(let aniImage):
+                let animatedImageView = AnimatedImageView(image: aniImage, frame: .zero)
+                let s = animatedImageView.boundedSize
+                animatedImageView.frame = CGRect(x: x(s.width), y: y, width: s.width, height: s.height)
+                h += s.height
+                animatedImage = animatedImageView
+                scrollView.addSubview(animatedImageView)
+            case .error(let error):
+                print("error decoding image: \(error)")
+            }
+            return h
         } catch {
-            print("error")
+            print("error with the provided example data")
         }
+        return 0
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
-

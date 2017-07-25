@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9D2B3F261F272A11000784A8 /* anitiger.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9D2B3F251F272A07000784A8 /* anitiger.webp */; };
 		9D377DEF1EFC9B4A00ADBE4B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D377DEE1EFC9B4A00ADBE4B /* AppDelegate.swift */; };
 		9D377DF11EFC9B4A00ADBE4B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D377DF01EFC9B4A00ADBE4B /* ViewController.swift */; };
 		9D377DF41EFC9B4A00ADBE4B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D377DF21EFC9B4A00ADBE4B /* Main.storyboard */; };
@@ -14,10 +15,9 @@
 		9D377DF91EFC9B4A00ADBE4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D377DF71EFC9B4A00ADBE4B /* LaunchScreen.storyboard */; };
 		9D377E041EFC9B4A00ADBE4B /* Example_Swift_WebPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D377E031EFC9B4A00ADBE4B /* Example_Swift_WebPTests.swift */; };
 		9D3D5AD21EFE30C30009837C /* SwiftWebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3D5ACD1EFE30B00009837C /* SwiftWebP.framework */; };
-		9DF0ECC61F038B5100B53BE8 /* 2_webp_a.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0ECC31F038B1600B53BE8 /* 2_webp_a.webp */; };
-		9DF0ECC71F038B5100B53BE8 /* 2_webp_ll.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0ECC41F038B1600B53BE8 /* 2_webp_ll.webp */; };
-		9DF0ECC91F03990200B53BE8 /* cell_animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0ECC81F03981A00B53BE8 /* cell_animation.webp */; };
-		9DF0ECCB1F039F2100B53BE8 /* gift-box-animated.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DF0ECCA1F039F1700B53BE8 /* gift-box-animated.webp */; };
+		9DAC80BF1F26D1B6004B596C /* cell_animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC80BE1F26D0E1004B596C /* cell_animation.webp */; };
+		9DAC80C01F26D1B6004B596C /* cosmic_tiger_a.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC80BD1F26D0DD004B596C /* cosmic_tiger_a.webp */; };
+		9DAC80C21F26D1B6004B596C /* red_fox.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC80BA1F26D0D2004B596C /* red_fox.webp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9D2B3F251F272A07000784A8 /* anitiger.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = anitiger.webp; sourceTree = "<group>"; };
 		9D377DEB1EFC9B4A00ADBE4B /* Example-Swift-WebP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example-Swift-WebP.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D377DEE1EFC9B4A00ADBE4B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9D377DF01EFC9B4A00ADBE4B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +64,9 @@
 		9D377E031EFC9B4A00ADBE4B /* Example_Swift_WebPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Example_Swift_WebPTests.swift; sourceTree = "<group>"; };
 		9D377E051EFC9B4A00ADBE4B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9D3D5AC71EFE30B00009837C /* SwiftWebP.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftWebP.xcodeproj; path = ../../SwiftWebP.xcodeproj; sourceTree = "<group>"; };
-		9DF0ECC31F038B1600B53BE8 /* 2_webp_a.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2_webp_a.webp; sourceTree = "<group>"; };
-		9DF0ECC41F038B1600B53BE8 /* 2_webp_ll.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2_webp_ll.webp; sourceTree = "<group>"; };
-		9DF0ECC81F03981A00B53BE8 /* cell_animation.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = cell_animation.webp; sourceTree = "<group>"; };
-		9DF0ECCA1F039F1700B53BE8 /* gift-box-animated.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gift-box-animated.webp"; sourceTree = "<group>"; };
+		9DAC80BA1F26D0D2004B596C /* red_fox.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = red_fox.webp; sourceTree = "<group>"; };
+		9DAC80BD1F26D0DD004B596C /* cosmic_tiger_a.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = cosmic_tiger_a.webp; sourceTree = "<group>"; };
+		9DAC80BE1F26D0E1004B596C /* cell_animation.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = cell_animation.webp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +110,7 @@
 		9D377DED1EFC9B4A00ADBE4B /* Example-Swift-WebP */ = {
 			isa = PBXGroup;
 			children = (
-				9DF0ECCA1F039F1700B53BE8 /* gift-box-animated.webp */,
-				9DF0ECC81F03981A00B53BE8 /* cell_animation.webp */,
-				9DF0ECC31F038B1600B53BE8 /* 2_webp_a.webp */,
-				9DF0ECC41F038B1600B53BE8 /* 2_webp_ll.webp */,
+				9DAC80AE1F26CFFB004B596C /* images */,
 				9D377DEE1EFC9B4A00ADBE4B /* AppDelegate.swift */,
 				9D377DF01EFC9B4A00ADBE4B /* ViewController.swift */,
 				9D377DF21EFC9B4A00ADBE4B /* Main.storyboard */,
@@ -140,6 +137,17 @@
 				9D3D5ACF1EFE30B00009837C /* SwiftWebPTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		9DAC80AE1F26CFFB004B596C /* images */ = {
+			isa = PBXGroup;
+			children = (
+				9D2B3F251F272A07000784A8 /* anitiger.webp */,
+				9DAC80BE1F26D0E1004B596C /* cell_animation.webp */,
+				9DAC80BD1F26D0DD004B596C /* cosmic_tiger_a.webp */,
+				9DAC80BA1F26D0D2004B596C /* red_fox.webp */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,10 +259,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9DF0ECCB1F039F2100B53BE8 /* gift-box-animated.webp in Resources */,
-				9DF0ECC91F03990200B53BE8 /* cell_animation.webp in Resources */,
-				9DF0ECC61F038B5100B53BE8 /* 2_webp_a.webp in Resources */,
-				9DF0ECC71F038B5100B53BE8 /* 2_webp_ll.webp in Resources */,
+				9D2B3F261F272A11000784A8 /* anitiger.webp in Resources */,
+				9DAC80BF1F26D1B6004B596C /* cell_animation.webp in Resources */,
+				9DAC80C01F26D1B6004B596C /* cosmic_tiger_a.webp in Resources */,
+				9DAC80C21F26D1B6004B596C /* red_fox.webp in Resources */,
 				9D377DF91EFC9B4A00ADBE4B /* LaunchScreen.storyboard in Resources */,
 				9D377DF61EFC9B4A00ADBE4B /* Assets.xcassets in Resources */,
 				9D377DF41EFC9B4A00ADBE4B /* Main.storyboard in Resources */,
