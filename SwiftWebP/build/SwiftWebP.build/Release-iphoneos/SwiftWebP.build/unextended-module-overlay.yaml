@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/mmork/Documents/DSC/Cocoa/libraries/Swift-WebP/SwiftWebP/build/Release-iphoneos/SwiftWebP.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/mmork/Documents/DSC/Cocoa/libraries/Swift-WebP/SwiftWebP/build/SwiftWebP.build/Release-iphoneos/SwiftWebP.build/unextended-module.modulemap',
+    }]
+  }]
+}

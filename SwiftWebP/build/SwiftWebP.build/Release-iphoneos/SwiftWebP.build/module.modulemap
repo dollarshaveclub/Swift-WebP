@@ -1,0 +1,10 @@
+framework module SwiftWebP {
+  umbrella header "SwiftWebP.h"
+
+  export *
+  module * { export * }
+}
+
+module SwiftWebP.Swift {
+    header "SwiftWebP-Swift.h"
+}

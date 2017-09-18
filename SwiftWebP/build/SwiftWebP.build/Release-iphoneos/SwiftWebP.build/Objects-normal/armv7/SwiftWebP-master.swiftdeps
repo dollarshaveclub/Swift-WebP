@@ -1,0 +1,6 @@
+version: "Apple Swift version 3.1 (swiftlang-802.0.53 clang-802.0.42)"
+options: "065f48244348ad4220c8cebaa2d15f2f"
+build_time: [554332219, 727770000]
+inputs:
+  "/Users/mmork/Documents/DSC/Cocoa/libraries/Swift-WebP/SwiftWebP/SwiftWebP/ImageDecoder.swift": [9223372036854775807, 0]
+  "/Users/mmork/Documents/DSC/Cocoa/libraries/Swift-WebP/SwiftWebP/SwiftWebP/AnimatedImage.swift": [9223372036854775807, 0]
