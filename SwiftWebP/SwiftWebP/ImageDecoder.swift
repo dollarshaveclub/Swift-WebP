@@ -170,7 +170,7 @@ public class ImageDecoder {
                     guard let height = frameProps.object(forKey: kCGImagePropertyPixelHeight) as? NSNumber,
                         let width = frameProps.object(forKey: kCGImagePropertyPixelWidth) as? NSNumber else {return .error(.gif) }
                     
-                    let frame = CGRect(origin: .zero, size: CGSize(width: CGFloat(width)/scale, height: CGFloat(height)/scale))
+                    let frame = CGRect(origin: .zero, size: CGSize(width: CGFloat(truncating: width)/scale, height: CGFloat(truncating: height)/scale))
                     if Int(frame.size.height) > largestHeight {
                         largestHeight = Int(frame.size.height)
                         largestWidth = Int(frame.size.width)

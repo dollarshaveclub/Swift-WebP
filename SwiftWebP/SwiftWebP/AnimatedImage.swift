@@ -48,11 +48,28 @@ open class AnimatedImage {
     }
 }
 
+extension AnimatedImageView {
+    
+}
+
 open class AnimatedImageView: UIView {
     var image: AnimatedImage
     private var link: CADisplayLink!
     private var refIndex = 0
     private var refTime: CFTimeInterval = 0.0
+    
+    @objc func refresh(_ link: CADisplayLink) {
+        if CACurrentMediaTime() - refTime > Double(image.frames![refIndex].displayDuration)/1000
+            || refIndex == 0 {
+            layer.setNeedsDisplay()
+            refIndex += 1
+            refTime = CACurrentMediaTime()
+            if refIndex > image.frames!.count - 1 {
+                refIndex = 0
+            }
+        }
+    }
+
 
     public var boundedSize: CGSize {
         guard let frames = image.frames else {
@@ -81,6 +98,7 @@ open class AnimatedImageView: UIView {
         backgroundColor = image.backgroundColor.withAlphaComponent(image.hasAlpha ? 1.0 : 0.0)
         if image.frames?.count ?? 0 > 0 {
             refTime = CACurrentMediaTime()
+            link = CADisplayLink()
             link = CADisplayLink(target: self, selector: #selector(refresh(_:)))
             link.add(to: .main, forMode: .commonModes)
         }
@@ -110,18 +128,6 @@ open class AnimatedImageView: UIView {
         let rect = CGRect(x: (bounds.width - frame.image.size.width)/2, y: (bounds.height - frame.image.size.height)/2, width: boundedSize.width, height: boundedSize.height)
         frame.image.draw(in: rect)
         UIGraphicsPopContext()
-    }
-
-    func refresh(_ link: CADisplayLink) {
-        if CACurrentMediaTime() - refTime > Double(image.frames![refIndex].displayDuration)/1000
-            || refIndex == 0 {
-            layer.setNeedsDisplay()
-            refIndex += 1
-            refTime = CACurrentMediaTime()
-            if refIndex > image.frames!.count - 1 {
-                refIndex = 0
-            }
-        }
     }
 
     deinit {
