@@ -1,0 +1,4 @@
+module WebPDemux [system][extern_c] {
+    header "demux.h"
+    export *
+}

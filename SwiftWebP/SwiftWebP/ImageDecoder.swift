@@ -12,6 +12,7 @@ import CoreGraphics
 import ImageIO
 import MobileCoreServices
 import WebP
+import WebPDemux
 
 public enum ImageDecodeResult {
     case image(UIImage)

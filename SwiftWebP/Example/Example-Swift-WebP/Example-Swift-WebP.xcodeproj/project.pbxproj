@@ -14,10 +14,11 @@
 		9D377DF61EFC9B4A00ADBE4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9D377DF51EFC9B4A00ADBE4B /* Assets.xcassets */; };
 		9D377DF91EFC9B4A00ADBE4B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D377DF71EFC9B4A00ADBE4B /* LaunchScreen.storyboard */; };
 		9D377E041EFC9B4A00ADBE4B /* Example_Swift_WebPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D377E031EFC9B4A00ADBE4B /* Example_Swift_WebPTests.swift */; };
-		9D3D5AD21EFE30C30009837C /* SwiftWebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3D5ACD1EFE30B00009837C /* SwiftWebP.framework */; };
 		9DAC80BF1F26D1B6004B596C /* cell_animation.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC80BE1F26D0E1004B596C /* cell_animation.webp */; };
 		9DAC80C01F26D1B6004B596C /* cosmic_tiger_a.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC80BD1F26D0DD004B596C /* cosmic_tiger_a.webp */; };
 		9DAC80C21F26D1B6004B596C /* red_fox.webp in Resources */ = {isa = PBXBuildFile; fileRef = 9DAC80BA1F26D0D2004B596C /* red_fox.webp */; };
+		9DC210C41F71ED0900375AD4 /* SwiftWebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3D5ACD1EFE30B00009837C /* SwiftWebP.framework */; };
+		9DC210C51F71ED0900375AD4 /* SwiftWebP.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9D3D5ACD1EFE30B00009837C /* SwiftWebP.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,28 @@
 			remoteGlobalIDString = 9D377E171EFC9F9600ADBE4B;
 			remoteInfo = SwiftWebP;
 		};
+		9DC210C61F71ED0900375AD4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9D3D5AC71EFE30B00009837C /* SwiftWebP.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 9D377E171EFC9F9600ADBE4B;
+			remoteInfo = SwiftWebP;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		9DC210C81F71ED0900375AD4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				9DC210C51F71ED0900375AD4 /* SwiftWebP.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		9D2B3F251F272A07000784A8 /* anitiger.webp */ = {isa = PBXFileReference; lastKnownFileType = file; path = anitiger.webp; sourceTree = "<group>"; };
@@ -74,7 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D3D5AD21EFE30C30009837C /* SwiftWebP.framework in Frameworks */,
+				9DC210C41F71ED0900375AD4 /* SwiftWebP.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,11 +182,13 @@
 				9D377DE71EFC9B4A00ADBE4B /* Sources */,
 				9D377DE81EFC9B4A00ADBE4B /* Frameworks */,
 				9D377DE91EFC9B4A00ADBE4B /* Resources */,
+				9DC210C81F71ED0900375AD4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				9D3D5AD11EFE30BF0009837C /* PBXTargetDependency */,
+				9DC210C71F71ED0900375AD4 /* PBXTargetDependency */,
 			);
 			name = "Example-Swift-WebP";
 			productName = "Example-Swift-WebP";
@@ -311,6 +335,11 @@
 			name = SwiftWebP;
 			targetProxy = 9D3D5AD01EFE30BF0009837C /* PBXContainerItemProxy */;
 		};
+		9DC210C71F71ED0900375AD4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftWebP;
+			targetProxy = 9DC210C61F71ED0900375AD4 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -431,6 +460,7 @@
 		9D377E091EFC9B4A00ADBE4B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E3GZLA6NQ6;
 				ENABLE_BITCODE = NO;
@@ -445,6 +475,7 @@
 		9D377E0A1EFC9B4A00ADBE4B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = E3GZLA6NQ6;
 				ENABLE_BITCODE = NO;
