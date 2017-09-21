@@ -1,11 +1,6 @@
 module WebP [system][extern_c] {
-	header "config.h"
 	header "decode.h"
-    header "demux.h"
-    header "encode.h"
-    header "format_constants.h"
     header "mux_types.h"
-    header "mux.h"
     header "types.h"
     export *
 }
